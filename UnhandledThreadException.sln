@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnhandledThreadException", "UnhandledThreadException\UnhandledThreadException.csproj", "{7FA06226-C948-4EEA-AFC3-024B5F10CC98}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CLILayer", "CLILayer\CLILayer.vcxproj", "{12E064EC-2C2A-4FF1-9333-8049B5476D9E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeLayer", "NativeLayer\NativeLayer.vcxproj", "{033AB821-3018-4F3A-A38F-27C2A44A197F}"
@@ -21,18 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|x64.Build.0 = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Debug|x86.Build.0 = Debug|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|x64.ActiveCfg = Release|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|x64.Build.0 = Release|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|x86.ActiveCfg = Release|Any CPU
-		{7FA06226-C948-4EEA-AFC3-024B5F10CC98}.Release|x86.Build.0 = Release|Any CPU
 		{12E064EC-2C2A-4FF1-9333-8049B5476D9E}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{12E064EC-2C2A-4FF1-9333-8049B5476D9E}.Debug|x64.ActiveCfg = Debug|x64
 		{12E064EC-2C2A-4FF1-9333-8049B5476D9E}.Debug|x64.Build.0 = Debug|x64
