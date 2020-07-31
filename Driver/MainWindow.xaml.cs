@@ -1,29 +1,12 @@
-﻿using System;
-using System.Windows;
-using CLILayer;
+﻿using System.Windows;
 
 namespace Driver
 {
    public partial class MainWindow : Window
    {
-      public MainWindow()
-      {
-         InitializeComponent();
-      }
-
-      private void Button_Click( object sender, RoutedEventArgs e )
-      {
-         throw new Exception( "Managed exception" );
-      }
-
-      private void Button_Click_1( object sender, RoutedEventArgs e )
-      {
-         new InteropLayer().Crash();
-      }
-
-      private void Button_Click_2( object sender, RoutedEventArgs e )
-      {
-         new InteropLayer().ThreadCrash();
-      }
+      public MainWindow() => InitializeComponent();
+      private void Managed_Click( object sender, RoutedEventArgs e ) => Crash.Instance.Managed();
+      private void Native_Click( object sender, RoutedEventArgs e ) => Crash.Instance.Native();
+      private void NativeThreaded_Click( object sender, RoutedEventArgs e ) => Crash.Instance.NativeThreaded();
    }
 }

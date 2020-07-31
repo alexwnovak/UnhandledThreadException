@@ -14,16 +14,16 @@
               Height="30"
               Margin="0,20,0,0"
               Content="Managed Crash"
-              Click="Button_Click" />
+              Click="Managed_Click" />
       <Button Width="140"
               Height="30"
               Margin="0,20,0,0"
               Content="Native Crash"
-              Click="Button_Click_1" />
+              Click="Native_Click" />
       <Button Width="140"
               Height="30"
               Margin="0,20,0,0"
               Content="Native Thread Crash"
-              Click="Button_Click_2" />
+              Click="NativeThreaded_Click" />
    </StackPanel>
 </Window>
