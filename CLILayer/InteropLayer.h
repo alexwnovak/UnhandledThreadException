@@ -1,11 +1,19 @@
 #pragma once
 
+#include <Windows.h>
+
 namespace CLILayer
 {
-   public ref class InteropLayer abstract sealed
+   public ref class InteropLayer
    {
    public:
-      static void Crash();
-      static void ThreadCrash();
+      void Init();
+      void Crash();
+      void ThreadCrash();
+
+   private:
+      delegate void NativeThreadUnhandledExceptionHandler();
+
+      void OnNativeThreadUnhandledException();
    };
 }
