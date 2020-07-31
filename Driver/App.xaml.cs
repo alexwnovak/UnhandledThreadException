@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace Driver
 {
@@ -10,11 +11,23 @@ namespace Driver
          base.OnStartup( e );
 
          AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+         Dispatcher.UnhandledException += Dispatcher_UnhandledException;
+         Dispatcher.UnhandledExceptionFilter += Dispatcher_UnhandledExceptionFilter;
       }
 
       private void CurrentDomain_UnhandledException( object sender, UnhandledExceptionEventArgs e )
       {
-         MessageBox.Show( $"Unhandled exception caught:{Environment.NewLine}{e.ExceptionObject}" );
+         MessageBox.Show( $"APPDOMAIN:{Environment.NewLine}{e.ExceptionObject}" );
+      }
+
+      private void Dispatcher_UnhandledException( object sender, DispatcherUnhandledExceptionEventArgs e )
+      {
+         MessageBox.Show( $"DISPATCHER:{Environment.NewLine}{e.Exception}" );
+      }
+
+      private void Dispatcher_UnhandledExceptionFilter( object sender, DispatcherUnhandledExceptionFilterEventArgs e )
+      {
+         MessageBox.Show( $"DISPATCHER FILTER:{Environment.NewLine}{e.Exception}" );
       }
    }
 }
