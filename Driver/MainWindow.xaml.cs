@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using CLILayer;
 
 namespace Driver
 {
@@ -7,6 +9,21 @@ namespace Driver
       public MainWindow()
       {
          InitializeComponent();
+      }
+
+      private void Button_Click( object sender, RoutedEventArgs e )
+      {
+         throw new Exception( "Managed exception" );
+      }
+
+      private void Button_Click_1( object sender, RoutedEventArgs e )
+      {
+         new InteropLayer().Crash();
+      }
+
+      private void Button_Click_2( object sender, RoutedEventArgs e )
+      {
+         new InteropLayer().ThreadCrash();
       }
    }
 }
