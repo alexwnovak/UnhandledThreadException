@@ -9,6 +9,7 @@ namespace Driver
       protected override void OnStartup( StartupEventArgs e )
       {
          base.OnStartup( e );
+         Crash.Instance.Initialize();
 
          AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
          Dispatcher.UnhandledException += Dispatcher_UnhandledException;
