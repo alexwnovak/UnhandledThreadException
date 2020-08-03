@@ -9,17 +9,10 @@ namespace Driver
       protected override void OnStartup( StartupEventArgs e )
       {
          base.OnStartup( e );
-         //Crash.Instance.Initialize();
-         UnhandledExceptionFilter.AddHandler( PInvokeHandler );
 
          AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
          Dispatcher.UnhandledException += Dispatcher_UnhandledException;
          Dispatcher.UnhandledExceptionFilter += Dispatcher_UnhandledExceptionFilter;
-      }
-
-      private void PInvokeHandler()
-      {
-         MessageBox.Show( $"P/Invoke handler" );
       }
 
       private void CurrentDomain_UnhandledException( object sender, UnhandledExceptionEventArgs e )

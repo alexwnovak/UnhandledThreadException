@@ -12,14 +12,7 @@ VOID_CALLBACK _customExceptionCallback = nullptr;
 
 LONG UnhandledExceptionGuy( PEXCEPTION_POINTERS pExceptionInfo )
 {
-   std::fstream x( "C:\\temp\\broke.txt" );
-   x << "broke" << std::endl;
-   x.close();
-   //if (_customExceptionCallback != nullptr)
-   {
-      _customExceptionCallback();
-   }
-
+   _customExceptionCallback();
    return EXCEPTION_CONTINUE_SEARCH;
 }
 

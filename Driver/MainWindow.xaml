@@ -10,6 +10,19 @@
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen">
    <StackPanel Margin="20,0,20,20">
+      <StackPanel Orientation="Horizontal">
+         <Button Width="140"
+                 Height="60"
+                 Margin="0,20,0,0"
+                 Content="Native exception filter"
+                 Click="NativeExceptionFilter_Click" />
+         <Button Width="140"
+                 Height="60"
+                 Margin="20,20,0,0"
+                 Content="P/invoke exception filter"
+                 Click="PInvokeExceptionFilter_Click" />
+      </StackPanel>
+
       <Button Width="140"
               Height="30"
               Margin="0,20,0,0"
