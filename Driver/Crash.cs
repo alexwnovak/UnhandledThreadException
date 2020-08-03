@@ -8,6 +8,10 @@ namespace Driver
       public static Crash Instance { get; } = new Crash();
       private readonly InteropLayer _interopLayer = new InteropLayer();
 
+      public event EventHandler UnhandledNativeException;
+
+      private Crash() => _interopLayer.UnhandledNativeException += UnhandledNativeException;
+
       public void Initialize() => _interopLayer.Init();
       public void Managed() => throw new Exception();
       public void Native() => _interopLayer.Crash();

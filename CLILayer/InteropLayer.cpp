@@ -5,8 +5,7 @@ namespace CLILayer
 {
    void InteropLayer::OnNativeThreadUnhandledException()
    {
-      System::Console::WriteLine( "OH SHIT" );
-
+      UnhandledNativeException( this, System::EventArgs::Empty );
    }
 
    void InteropLayer::Init()

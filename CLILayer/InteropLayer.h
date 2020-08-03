@@ -11,6 +11,8 @@ namespace CLILayer
       void Crash();
       void ThreadCrash();
 
+      event System::EventHandler^ UnhandledNativeException;
+
    private:
       delegate void NativeThreadUnhandledExceptionHandler();
 

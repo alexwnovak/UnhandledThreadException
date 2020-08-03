@@ -12,36 +12,20 @@ VOID_CALLBACK _customExceptionCallback = nullptr;
 
 LONG UnhandledExceptionGuy( PEXCEPTION_POINTERS pExceptionInfo )
 {
-   std::ofstream myfile;
-
-   myfile.open( "C:\\temp\\crash.txt" );
-   myfile << "Writing this to a file.\n";
-   myfile.close();
-
-   std::cout << "===== Caught exception" << std::endl;
-
-   if (_customExceptionCallback != nullptr)
+   std::fstream x( "C:\\temp\\broke.txt" );
+   x << "broke" << std::endl;
+   x.close();
+   //if (_customExceptionCallback != nullptr)
    {
       _customExceptionCallback();
    }
 
-   return 0L;
+   return EXCEPTION_CONTINUE_SEARCH;
 }
-
-
 
 void InitNativeCrashHandler( VOID_CALLBACK handler )
 {
    _customExceptionCallback = handler;
-
-   //set_terminate( [] ()
-   //   {
-   //      std::cout << "CRUD";
-   //   } );
-
-
-
-   std::cout << "===== Init native crash handler" << std::endl;
    SetUnhandledExceptionFilter( &UnhandledExceptionGuy );
 }
 
@@ -50,25 +34,29 @@ void NativeCrash()
    throw "";
 }
 
+DWORD WINAPI Win32ThreadFunc( LPVOID lpParam )
+{
+   throw 123;
+   return 0;
+}
+
 void NativeThreadCrash()
 {
-   std::cout << "===== Thread crash" << std::endl;
+   DWORD threadId;
+   auto hThread = CreateThread(
+      nullptr,                   // default security attributes
+      0,                         // use default stack size
+      Win32ThreadFunc,           // thread function name
+      nullptr,                   // argument to thread function
+      0,                         // use default creation flags
+      &threadId );
 
-   auto func = []
-   {
-      std::cout << "  -- Throwing exception" << std::endl;
-      throw ""; // std::runtime_error( "Unhandled thread exception" );
-   };
-
-   std::cout << "  -- Starting thread" << std::endl;
-   std::thread thread( func );
-
-   std::cout << "  -- Joining thread" << std::endl;
-
-   //Sleep( 5000 );
-   thread.join();
-
-   //std::thread x( func );
-
-   //std::cout << "f";
+   //   auto func = []
+   //   {
+   //      throw "";
+   //   };
+   //
+   //   std::thread thread( func );
+   //   thread.join();
 }
+
