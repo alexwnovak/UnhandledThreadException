@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Driver
 {
@@ -8,6 +10,15 @@ namespace Driver
       public MainWindow()
       {
          InitializeComponent();
+
+         if ( Debugger.IsAttached )
+         {
+            PInvokeFilterButton.Background = new SolidColorBrush( Colors.Red );
+         }
+         else
+         {
+            DebuggerWarningMessage.Visibility = Visibility.Collapsed;
+         }
       }
 
       private void OnUnhandledNativeException( object sender, EventArgs e ) => MessageBox.Show( "Unhandled native exception" );
