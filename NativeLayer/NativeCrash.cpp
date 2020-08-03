@@ -33,7 +33,18 @@ DWORD WINAPI Win32ThreadFunc( LPVOID lpParam )
    return 0;
 }
 
-void NativeThreadCrash()
+void NativeThreadCrashStl()
+{
+   auto func = []
+   {
+      throw "";
+   };
+
+   std::thread thread( func );
+   thread.join();
+}
+
+void NativeThreadCrashWin32()
 {
    DWORD threadId;
    auto hThread = CreateThread(
@@ -43,13 +54,4 @@ void NativeThreadCrash()
       nullptr,                   // argument to thread function
       0,                         // use default creation flags
       &threadId );
-
-   //   auto func = []
-   //   {
-   //      throw "";
-   //   };
-   //
-   //   std::thread thread( func );
-   //   thread.join();
 }
-

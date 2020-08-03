@@ -15,6 +15,7 @@ namespace Driver
       public void Initialize() => _interopLayer.Init();
       public void Managed() => throw new Exception();
       public void Native() => _interopLayer.Crash();
-      public void NativeThreaded() => _interopLayer.ThreadCrash();
+      public void NativeThreadedStl() => _interopLayer.ThreadCrashStl();
+      public void NativeThreadedWin32() => _interopLayer.ThreadCrashWin32();
    }
 }

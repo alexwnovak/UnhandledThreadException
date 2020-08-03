@@ -22,8 +22,13 @@ namespace CLILayer
       NativeCrash();
    }
 
-   void InteropLayer::ThreadCrash()
+   void InteropLayer::ThreadCrashStl()
    {
-      NativeThreadCrash();
+      NativeThreadCrashStl();
+   }
+
+   void InteropLayer::ThreadCrashWin32()
+   {
+      NativeThreadCrashWin32();
    }
 }

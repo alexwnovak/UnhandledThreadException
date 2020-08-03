@@ -27,20 +27,26 @@
                  Click="PInvokeExceptionFilter_Click" />
       </StackPanel>
 
-      <Button Width="140"
+      <Button Width="160"
               Height="30"
               Margin="0,20,0,0"
               Content="Managed Crash"
               Click="Managed_Click" />
-      <Button Width="140"
+      <Button Width="160"
               Height="30"
               Margin="0,20,0,0"
               Content="Native Crash"
               Click="Native_Click" />
-      <Button Width="140"
+      <Button Width="160"
               Height="30"
               Margin="0,20,0,0"
-              Content="Native Thread Crash"
+              Content="Native Thread Crash (STL)"
               Click="NativeThreaded_Click" />
+
+      <Button Width="160"
+              Height="30"
+              Margin="0,20,0,0"
+              Content="Native Thread Crash (Win32)"
+              Click="NativeThreadedWin32_Click" />
    </StackPanel>
 </Window>

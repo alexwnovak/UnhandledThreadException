@@ -9,7 +9,8 @@ namespace CLILayer
    public:
       void Init();
       void Crash();
-      void ThreadCrash();
+      void ThreadCrashStl();
+      void ThreadCrashWin32();
 
       event System::EventHandler^ UnhandledNativeException;
 

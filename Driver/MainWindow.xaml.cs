@@ -26,6 +26,7 @@ namespace Driver
 
       private void Managed_Click( object sender, RoutedEventArgs e ) => Crash.Instance.Managed();
       private void Native_Click( object sender, RoutedEventArgs e ) => Crash.Instance.Native();
-      private void NativeThreaded_Click( object sender, RoutedEventArgs e ) => Crash.Instance.NativeThreaded();
+      private void NativeThreaded_Click( object sender, RoutedEventArgs e ) => Crash.Instance.NativeThreadedStl();
+      private void NativeThreadedWin32_Click( object sender, RoutedEventArgs e ) => Crash.Instance.NativeThreadedWin32();
    }
 }
